@@ -15,9 +15,8 @@ datetime <- strptime(paste(date_data$Date, date_data$Time), "%d/%m/%Y %H:%M:%S")
 
 
 # plot lines
-plot(datetime, global_active_power, pch=NA, ylab="Global Active Power (kilowatts)", xlab="") 
-lines(datetime, global_active_power) 
+png("plot2.png", width=480, height=480)
+plot(datetime, global_active_power, pch=NA, ylab="Global Active Power (kilowatts)", xlab="", type="l") 
 
-dev.copy(png, 'plot2.png')
 dev.off()
 
