@@ -7,7 +7,7 @@ housing_data <- read.table(file_path, sep=";", header=TRUE)
 
 # retrieve global active power data from selected dates
 date_logical <- housing_data$Date == "1/2/2007" | housing_data$Date == "2/2/2007"
-global_active_power <- as.numeric(as.character(housing[sub, "Global_active_power"]))
+global_active_power <- as.numeric(as.character(housing_data[date_logical, "Global_active_power"]))
 
 # plot histogram
 hist(global_active_power, 
